@@ -1,0 +1,85 @@
+<header class="nav_scrolled" >
+  <div class="nav_list">
+    <a href="">
+      <img src="../assets/GK_EWP_Logo 1_White.png" 
+           alt="EWP_logo" 
+           style="width: 80px;">
+    </a>
+  </div> 
+  <nav class="main-nav">
+      <ul class="nav_list">  
+        <li><a href="about">About</a></li>
+        <li><a href="post">Share</a></li>
+        <li><a href="contact">Contact Us</a></li>               
+      </ul>
+  </nav>
+</header>
+<div class="head-spacer"></div>
+
+<main class="full-page">
+  <section class="post">
+    <h3>Share your story and join our community!</h3>
+    <!-- Desktop Form -->
+    <form class="desktop-display" [formGroup]="post" (submit)="onSubmit()">
+      <label for="name">Name:</label>
+      <br>
+      <input id="name" type="text" formControlName="name" name="name"  >
+      <br>
+      <br>
+      <label for="story">What two things are you the most proud of?</label>
+      <br>
+      <br>
+      <textarea formControlName="textbox" name="textbox" id="story" cols="60" rows="10"></textarea>
+      <br>
+      <br>
+      <label for="image"> Upload a picture of yourself. </label>
+      <br>
+      <input type="file" (change)="onFileSelected($event)" formControlName="image" id="post-image" name="image" style="background: transparent;">
+      <br>
+      <br>
+      <label for="email">E-mail:</label>
+      <br>
+      <label for="email" style="opacity: 0.7;">(Optional & will not be publicly available)</label>
+      <br>
+      <input type="text" formControlName="email" name="email" id="email">
+      <br>
+      <br>
+      <input type="checkbox" formControlName="tos" name="terms" id="tos" >
+      <label for="terms"> &nbsp;I have read and agree to the
+        <a href="tos" style="color: #070505;">Terms and Conditions</a>
+        and the
+        <a href="privacy" style="color: #070505;">Privacy Policy</a>
+      </label>
+      <br><br>
+      <button type="submit" [disabled]="!post.valid || clicked">Submit </button>
+      <br><br>
+    </form>
+    <!-- Mobile Form -->
+    <form class="mobile-display" [formGroup]="post" (submit)="onSubmit()">
+      <label for="name">Name:</label> &nbsp;
+      <input id="name" type="text" formControlName="name" name="name"  >
+      <br>
+      <label for="story">What two things are you the most proud of?</label> <br>
+      <textarea formControlName="textbox" name="textbox" id="story" cols="45" rows="10"></textarea> 
+      <br>
+      <label for="image"> Upload a picture of yourself. </label> <br>
+      <input type="file" (change)="onFileSelected($event)" formControlName="image" id="post-image" name="image" style="background: transparent;">
+      <br>
+      <label for="email">E-mail:&nbsp;</label>
+      <input type="text" formControlName="email" name="email" id="email">
+      <br>
+      <label for="email" style="opacity: 0.7;">(Optional & will not be publicly available)</label>
+      <br>
+      <input type="checkbox" formControlName="tos" name="terms" id="tos" >
+      <label for="terms"> &nbsp;I have read and agree to the<br>
+        <a href="tos" style="color: #070505;">Terms and Conditions</a>
+        and the
+        <a href="privacy" style="color: #070505;">Privacy Policy</a>
+      </label>
+      <br><br>
+      <button type="submit" [disabled]="!post.valid || clicked">Submit </button>
+    </form>
+
+  </section>
+  <div class="half-spacer"></div>   
+</main>
