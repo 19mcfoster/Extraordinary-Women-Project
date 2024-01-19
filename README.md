@@ -1,6 +1,7 @@
-# Frontend
+# Extraordinary Women Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This repository does not contain all files generated including angular web packs and node modules.
 
 ## Development server
 
